@@ -45,7 +45,7 @@ async function sendRequest(n, name) {
             });
             const body = await response.json();
 
-            if (response.status === 429 && body.message === 'You are being rate limited.') {
+            if (response.status === 429  {
                 console.log(`Rate limited. Retrying after ${body.retry_after / 1000} seconds...`);
                 setTimeout(send, body.retry_after, teamId);
                 return;
